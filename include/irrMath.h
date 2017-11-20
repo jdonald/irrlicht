@@ -223,6 +223,12 @@ namespace core
 	}
 #endif
 
+	template <>
+	inline short roundingError()
+	{
+		return static_cast<short>(ROUNDING_ERROR_S32);
+	}
+
 	template <class T>
 	inline T relativeErrorFactor()
 	{
