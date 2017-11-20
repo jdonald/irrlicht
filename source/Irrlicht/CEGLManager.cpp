@@ -100,12 +100,10 @@ static void init_ogl(CUBE_STATE_T *state)
    state->context = eglCreateContext(state->display, config, EGL_NO_CONTEXT, NULL);
    assert(state->context!=EGL_NO_CONTEXT);
 
-   // create an EGL window surface
-   success = graphics_get_display_size(0 /* LCD */, &state->screen_width, &state->screen_height);
-   assert( success >= 0 );
-
-   dst_rect.x = 0;
-   dst_rect.y = 0;
+   dst_rect.x = 200;
+   dst_rect.y = 200;
+   state->screen_width = 800;
+   state->screen_height = 600;
    dst_rect.width = state->screen_width;
    dst_rect.height = state->screen_height;
 
