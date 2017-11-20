@@ -69,7 +69,7 @@ emscripten: EMSCRIPTEN=1
 
 CXXINCS = -I../../include -Izlib -Ijpeglib -Ilibpng
 CPPFLAGS += $(CXXINCS) -DIRRLICHT_EXPORTS=1
-CXXFLAGS += -Wall -pipe -fno-exceptions -fno-rtti -fstrict-aliasing
+CXXFLAGS += -Wall -Wno-c++11-extensions -pipe -fno-exceptions -fno-rtti -fstrict-aliasing
 #CXXFLAGS += -std=gnu++11 -U__STRICT_ANSI__
 ifndef NDEBUG
   CXXFLAGS += -g -D_DEBUG
@@ -91,7 +91,7 @@ ifdef EMSCRIPTEN
     CFLAGS := -O3 -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
   endif
 else
-  CFLAGS := -O3 -fexpensive-optimizations -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
+  CFLAGS := -O3 -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
 endif
 
 sharedlib sharedlib_osx: CXXFLAGS += -fPIC
