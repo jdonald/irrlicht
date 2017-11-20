@@ -118,7 +118,7 @@ static void init_ogl(CUBE_STATE_T *state)
 
    state->dispman_element = vc_dispmanx_element_add ( dispman_update, state->dispman_display,
       0/*layer*/, &dst_rect, 0/*src*/,
-      &src_rect, DISPMANX_PROTECTION_NONE, 0 /*alpha*/, 0/*clamp*/, 0/*transform*/);
+      &src_rect, DISPMANX_PROTECTION_NONE, 0 /*alpha*/, 0/*clamp*/, static_cast<DISPMANX_TRANSFORM_T>(0));
 
    nativewindow.element = state->dispman_element;
    nativewindow.width = state->screen_width;
