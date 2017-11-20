@@ -107,6 +107,7 @@ staticlib sharedlib install: SYSTEM = Linux
 sharedlib install: SHARED_LIB = libIrrlicht.so
 sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
+CEGLManager.o CEGLManager.d: CXXINCS += -I/opt/vc/include
 
 #OSX specific options
 staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
